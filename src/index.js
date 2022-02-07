@@ -2,6 +2,7 @@
 const createCard = (cardData) => {
   //use createElement function to create new html elements
   const name = createElement('h2', 'card--title');
+  // add a width attribute to the image element as a object
   const img = createElement('img', 'card--img', { width: '256' });
   const card = createElement('li', 'card');
   const textWrapper = createElement('ul', 'card--text');
@@ -21,8 +22,14 @@ const createCard = (cardData) => {
 };
 
 // dumb function to create elements, pass it the tag type and a classname
-const createElement = (elementType, className = '') => {
+const createElement = (elementType, className = '', attributeObj = {}) => {
   const newElement = document.createElement(elementType);
+  // iterate through the width attribute object to get the key value pair
+  Object.entries(attributeObj).forEach((attribute) => {
+    // use the key value pair with the js method setAttribute(name,value)
+    newElement.setAttribute(attribute[0], attribute[1]);
+  });
+
   newElement.className = className;
   return newElement;
 };
