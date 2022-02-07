@@ -31,18 +31,16 @@ h2 {
   gap: 15px;
   justify-content: center;
   justify-items: center;
-
   padding: 2rem 0;
   margin-bottom: 2rem;
+  list-style: none;
 }
 
 .card {
   width: 100%;
   justify-self: center;
-
   border: 1px solid #252525;
   border-radius: 8px;
-
   cursor: pointer;
   transition: all 300ms;
 }
@@ -55,13 +53,12 @@ h2 {
 .card--text {
   margin: 0.2rem;
   padding: 1rem;
-
+  list-style: none;
   border-radius: 5px;
 }
 
 .card--img {
   display: block;
   margin: 0 auto;
-
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
