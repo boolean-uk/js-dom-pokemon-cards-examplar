@@ -3,8 +3,13 @@ const createCard = (cardData) => {
   //use createElement function to create new html elements
   const name = createElement('h2', 'card--title');
   // add a width attribute to the image element as a object
-  const img = createElement('img', 'card--img', { width: '256' });
+  const img = createElement('img', 'card--img', {
+    width: '256',
+    height: '300px'
+  });
   const card = createElement('li', 'card');
+  card.onclick = () =>
+    (img.src = `${cardData.sprites.other['dream_world'].front_default}`);
   const textWrapper = createElement('ul', 'card--text');
   // use createCardText function to ceate text from the card data
   const textElements = createCardText(cardData);
@@ -15,6 +20,18 @@ const createCard = (cardData) => {
   for (const element of textElements) {
     textWrapper.append(element);
   }
+
+  //storing images in variables
+  const image1 = cardData.sprites.other['official-artwork'].front_default;
+  const image2 = cardData.sprites.other['dream_world'].front_default;
+  //add an onclick toggle for card images
+  card.onclick = () => {
+    if (img.src === image1) {
+      img.src = image2;
+      return;
+    }
+    img.src = image1;
+  };
   // append the other attributes to the new card
   card.append(name, img, textWrapper);
   //return the  new card
