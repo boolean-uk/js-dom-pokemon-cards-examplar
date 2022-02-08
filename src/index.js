@@ -20,7 +20,7 @@ const createPokemonImage = (pokemon) => {
     return image
 }
 
-const createPokemonStat = (pokemon, baseStat, statName) => {
+const createPokemonStat = (baseStat, statName) => {
     const stat = document.createElement("LI")
     const text = document.createTextNode(`${statName}: ${baseStat}`)
     stat.appendChild(text)
@@ -31,7 +31,7 @@ const createPokemonStatList = (pokemon) => {
     const statList = document.createElement("UL")
     statList.classList.add("card--text")
     pokemon.stats.forEach(stat => {
-        const statEl = createPokemonStat(pokemon, stat.base_stat, stat.stat.name)
+        const statEl = createPokemonStat(stat.base_stat, stat.stat.name)
         statList.appendChild(statEl)
     })
     return statList
