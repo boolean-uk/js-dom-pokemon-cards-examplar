@@ -37,21 +37,36 @@ const createPokemonStatList = (pokemon) => {
     return statList
 }
 
+const createPokemonGameList = (pokemon) => {
+    const games = document.createElement('div')
+    games.classList.add("card--games")
+    pokemon.game_indices.forEach(game => {
+        const gameName = game.version.name
+        const gameEl = document.createElement("div")
+        gameEl.classList.add("tooltip", `game-${gameName}`)
+        gameEl.setAttribute("data-text", `Pokemon ${gameName}`)
+        games.appendChild(gameEl)
+    })
+    return games
+}
+
 const createPokemonElement = (pokemon) => {
     const card = document.createElement("LI")
     card.classList.add("card")
     card.appendChild(createPokemonHeader(pokemon))
     card.appendChild(createPokemonImage(pokemon))
     card.appendChild(createPokemonStatList(pokemon))
+    card.appendChild(createPokemonGameList(pokemon))
     return card
 }
+
 
 const createPokemonList = (pokemonList) => {
     return pokemonList.map(pokemon => createPokemonElement(pokemon))
 }
 
 const pokemonList = createPokemonList(data)
-console.log(pokemonList)
 pokemonList.forEach(pokemon => {
     document.getElementsByClassName("cards")[0].appendChild(pokemon)
 })
+

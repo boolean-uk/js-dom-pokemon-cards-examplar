@@ -67,3 +67,133 @@ h2 {
 
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
+
+.card--games {
+  list-style: none;
+  width: 100%;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.5rem;
+}
+
+.card--games div {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.tooltip {
+  position:relative; /* making the .tooltip span a container for the tooltip text */
+}
+
+.tooltip:before {
+  display:none; /* hide by default */
+  content: attr(data-text); /* here's the magic */
+  position:absolute;
+  
+  /* vertically center */
+  top:50%;
+  transform:translateY(-50%);
+  
+  /* move to right */
+  left:100%;
+  margin-left:15px; /* and add a small left margin */
+  
+  /* basic styles */
+  width:200px;
+  padding:10px;
+  border-radius:10px;
+  background:#000;
+  color: #fff;
+  text-align:center;
+  z-index: 1;
+
+}
+
+.tooltip:hover:before {
+  display:block;
+}
+
+.game-red {
+  background-color: red
+}
+
+.game-blue {
+  background-color: blue
+}
+
+.game-yellow {
+  background-color: yellow
+}
+
+.game-gold {
+  background-color: gold
+}
+
+.game-silver {
+  background-color: silver
+}
+
+.game-crystal {
+  background-color: cyan
+}
+
+.game-ruby {
+  background-color: ruby
+}
+
+.game-sapphire {
+  background-color: rgb(5, 5, 71)
+}
+
+.game-emerald {
+  background-color: rgb(12, 85, 12)
+}
+
+.game-firered {
+  background-color: rgb(223, 103, 5)
+}
+
+.game-leafgreen {
+  background-color: rgb(34, 185, 34)
+}
+
+.game-diamond {
+  background-color: rgb(151, 151, 151)
+}
+
+.game-pearl {
+  background-color: rgb(240, 202, 202)
+}
+
+.game-platinum {
+  background-color: rgb(168, 168, 168)
+}
+
+.game-heartgold {
+  background-color: rgb(192, 167, 24)
+}
+
+.game-soulsilver {
+  background-color: rgb(160, 158, 158)
+}
+
+.game-black {
+  background-color: black
+}
+
+.game-white {
+  background-color: white
+}
+
+.game-black-2 {
+  background-color: rgb(46, 44, 44)
+}
+
+.game-white-2 {
+  background-color: rgb(204, 200, 200)
+}
+
