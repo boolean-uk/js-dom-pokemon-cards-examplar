@@ -5,33 +5,6 @@ console.log(data);
 //pokemon card from the first element
 console.log(data[0]);
 
-const PokemonStats = [
-    {
-        statName: 'HP',
-        statIndex: 0,
-    },
-    {
-        statName: 'ATTACK',
-        statIndex: 1,
-    },
-    {
-        statName: 'DEFENSE',
-        statIndex: 2,
-    },
-    {
-        statName: 'SPECIAL-ATTACK',
-        statIndex: 3,
-    },
-    {
-        statName: 'SPECIAL-DEFENSE',
-        statIndex: 4,
-    },
-    {
-        statName: 'SPEED',
-        statIndex: 5,
-    },
-]
-
 const createPokemonHeader = (pokemon) => {
     const header = document.createElement("H2")
     const text = document.createTextNode(pokemon.name)
@@ -47,9 +20,9 @@ const createPokemonImage = (pokemon) => {
     return image
 }
 
-const createPokemonStat = (pokemon, statIndex, statName) => {
+const createPokemonStat = (pokemon, baseStat, statName) => {
     const stat = document.createElement("LI")
-    const text = document.createTextNode(`${statName}: ${pokemon.stats[statIndex].base_stat}`)
+    const text = document.createTextNode(`${statName}: ${baseStat}`)
     stat.appendChild(text)
     return stat
 }
@@ -57,8 +30,8 @@ const createPokemonStat = (pokemon, statIndex, statName) => {
 const createPokemonStatList = (pokemon) => {
     const statList = document.createElement("UL")
     statList.classList.add("card--text")
-    PokemonStats.forEach(stat => {
-        const statEl = createPokemonStat(pokemon, stat.statIndex, stat.statName)
+    pokemon.stats.forEach(stat => {
+        const statEl = createPokemonStat(pokemon, stat.base_stat, stat.stat.name)
         statList.appendChild(statEl)
     })
     return statList
