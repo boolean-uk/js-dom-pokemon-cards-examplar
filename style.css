@@ -25,6 +25,10 @@ h2 {
   text-align: center;
 }
 
+ul {
+  list-style: none;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, 375px);
@@ -57,6 +61,15 @@ h2 {
   padding: 1rem;
 
   border-radius: 5px;
+}
+
+.card--button {
+  margin: 0 auto 10px auto;
+  display: block;
+  padding: 1rem;
+
+  border-radius: 5px;
+
 }
 
 .card--img {
